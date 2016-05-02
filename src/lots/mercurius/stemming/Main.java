@@ -169,6 +169,7 @@ public class Main extends javax.swing.JFrame {
                 if(!praeses){
                     JOptionPane.showMessageDialog(this, "U heeft geen stem rechten", "WARNING", JOptionPane.WARNING_MESSAGE);
                     begin();
+                }else{
                 }
             }
             //checken of ie al getemd heefd

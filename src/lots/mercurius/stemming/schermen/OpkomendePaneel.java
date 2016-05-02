@@ -107,7 +107,6 @@ public class OpkomendePaneel extends javax.swing.JPanel {
             this.honorescousa.setVisible(false);
             bool_honorescousa = false;
         }
-        begin();
     }
     
     public void setKunnenStemmen(boolean praeses, boolean pro_senior, boolean honorescousa){
