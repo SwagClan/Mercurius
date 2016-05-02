@@ -119,6 +119,7 @@ public class StartPannel extends javax.swing.JFrame {
             rs.next();
             if(!rs.getBoolean("bool")){
                 JOptionPane.showMessageDialog(this, "De stemming staat nog niet open", "WARNING", JOptionPane.WARNING_MESSAGE);
+                main.begin();
                 return;
             }
             main.setVisible(true);

@@ -54,15 +54,15 @@ public class OpkomendePaneel extends javax.swing.JPanel {
     }
 
     public boolean getKomtopPraeses() {
-        return preases.isVisible();
+        return bool_praeses;
     }
 
     public boolean getKomtopProSenior() {
-        return proSenior.isVisible();
+        return bool_proSenior;
     }
 
     public boolean getKomtopProSeniorHonoresousa() {
-        return honorescousa.isVisible();
+        return bool_honorescousa;
     }
 
     private boolean isStemtvoorPreases() {

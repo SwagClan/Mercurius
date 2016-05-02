@@ -96,13 +96,16 @@ public class SQLhandler {
             rs.beforeFirst();
             rs.next();
             p.setRechten(rs.getInt("func_rechten"));
-            sluitConnectie();
+            System.out.println("ingelogd persoon rechten = " + p.getRechten());
+            sluitConnectie();            
+            
             if (pass.equals(encrypt(b.getPasswoord()))) {
                 main.setIngelogPersoon(p);
                 System.out.println("WW klopt");
                 return true;
             } else {
                 System.out.println("WW klopt niet");
+                p = new IngelogdPersoon(main);
                 return false;
             }
         } catch (SQLException ex) {

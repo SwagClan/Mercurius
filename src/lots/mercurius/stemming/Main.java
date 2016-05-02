@@ -147,18 +147,28 @@ public class Main extends javax.swing.JFrame {
             //ok
             setScreen(stemPaneel);
             haalOpkomendeOp(stemPaneel);
-            for (OpkomendePaneel p : stemPaneel.getOpkoomende()) {
+            for (int i = 0; i < stemPaneel.getOpkoomende().size(); i++) {
+                OpkomendePaneel p = stemPaneel.getOpkoomende().get(i);
+                System.out.println("lots.mercurius.stemming.Main.userLogin() " + ingelogdPersoon.getRechten());
                 if (ingelogdPersoon.getRechten() < 2) {
                     p.setKunnenStemmen(true, false, false);
                 } else {
                     p.setKunnenStemmen(true, true, true);
                 }
+                boolean praeses = false;
                 for(OpkomendePaneel op : stemPaneel.getOpkoomende()){
                     if(ingelogdPersoon.getRechten() < 2){
-                        if(!op.getKomtopPraeses()){
-                            JOptionPane.showMessageDialog(this, "U heeft geen rechten om te stemmen\n op de opkomende personen", "WARRNING", JOptionPane.WARNING_MESSAGE);
+                        if(op.getKomtopPraeses()){
+                            praeses = true;
+                            break;
                         }
+                    }else{
+                        praeses = true;
                     }
+                }
+                if(!praeses){
+                    JOptionPane.showMessageDialog(this, "U heeft geen stem rechten", "WARNING", JOptionPane.WARNING_MESSAGE);
+                    begin();
                 }
             }
             //checken of ie al getemd heefd
