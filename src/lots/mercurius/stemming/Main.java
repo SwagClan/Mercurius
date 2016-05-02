@@ -153,6 +153,13 @@ public class Main extends javax.swing.JFrame {
                 } else {
                     p.setKunnenStemmen(true, true, true);
                 }
+                for(OpkomendePaneel op : stemPaneel.getOpkoomende()){
+                    if(ingelogdPersoon.getRechten() < 2){
+                        if(!op.getKomtopPraeses()){
+                            JOptionPane.showMessageDialog(this, "U heeft geen rechten om te stemmen\n op de opkomende personen", "WARRNING", JOptionPane.WARNING_MESSAGE);
+                        }
+                    }
+                }
             }
             //checken of ie al getemd heefd
             if (checkGetemd(ingelogdPersoon.getLid_id())) {

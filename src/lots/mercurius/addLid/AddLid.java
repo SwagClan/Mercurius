@@ -220,6 +220,7 @@ public class AddLid extends javax.swing.JFrame {
             if(rs.next()){
                 heriInSchrijving.setVisible(true);
                 heriInSchrijving.setValeus();
+                heriInSchrijving.setid_Lid(rs.getInt("lid_id"));
                 dispose();
             }else{
                 System.out.println("lots.mercurius.addLid.AddLid.submitActionPerformed()"+" lid wordt weggeschreven");
@@ -237,8 +238,10 @@ public class AddLid extends javax.swing.JFrame {
                 rs.updateString("Club_naam", clubNaam.getText());
                 rs.updateBoolean("lid_actief", actiefLid.isSelected());
                 rs.insertRow();
+                rs.last();
+                int id = rs.getInt("lid_id");
                 rs.close();
-                JOptionPane.showMessageDialog(this, "U bent succsessvol ingeschreven", "SUCCSESS", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "U bent succsessvol ingeschreven\nUw lid id = " + id, "SUCCSESS", JOptionPane.INFORMATION_MESSAGE);
                 begin();
             }
             SQLhandlr.sluitConnectie();

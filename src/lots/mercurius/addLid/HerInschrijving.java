@@ -357,4 +357,8 @@ public class HerInschrijving extends javax.swing.JFrame {
         addLid.begin();
     }
 
+    void setid_Lid(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }
